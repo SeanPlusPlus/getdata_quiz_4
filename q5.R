@@ -22,6 +22,9 @@ getData <- function() {
 main <- function() {
 ################################################################################
   data  <- getData()
+  print(length(grep("2012", data)))
 }
 
-# main()
+main()
+
+# 250
