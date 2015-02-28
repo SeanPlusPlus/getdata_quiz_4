@@ -20,7 +20,7 @@ getData <- function() {
   # fetch and return
   fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv"
   download.file(fileUrl, destfile = "./data/data2.csv", method = "curl")
-  data <- read.csv("./data/data2.csv")
+  data <- read.csv("./data/data2.csv", skip = 4, nrows = 190)
   return(data)
 }
 
@@ -28,8 +28,9 @@ getData <- function() {
 main <- function() {
 ################################################################################
   data <- getData()
+  print(mean(as.numeric(gsub(",","", data$X.4))))
 }
 
-#main()
+main()
 
-# ""   "15"
+# 377652.4
