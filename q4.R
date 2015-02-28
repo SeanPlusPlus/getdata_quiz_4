@@ -41,6 +41,11 @@ main <- function() {
   data <- getData()
   gdp  <- data[[1]]
   ed   <- data[[2]]
+  notes <- ed$Special.Notes
+  notes <- notes[notes != ""]
+  print(length(intersect(grep("June", notes), grep("Fiscal", notes))))
 }
 
-# main()
+main()
+
+# 13
