@@ -21,7 +21,12 @@ getData <- function() {
 ################################################################################
 main <- function() {
 ################################################################################
+  Sys.setlocale(locale="C")
   data <- getData()
+  countryNames <- data$X.3
+  print(length(grep("^United", countryNames)))
 }
 
-# main()
+main()
+
+# 3
