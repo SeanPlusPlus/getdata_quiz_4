@@ -31,4 +31,10 @@ getData <- function() {
 main <- function() {
 ################################################################################
   data <- getData()
+  splitnames <- strsplit(names(data), "wgtp")
+  print(splitnames[[123]])
 }
+
+main()
+
+# ""   "15"
